@@ -1,0 +1,87 @@
+//*--------------------------------------------------------------------*
+//*        GERACAO DE RELATORIO PONTUAL                                *
+//* -------------------------------------------------------------------*
+//ATA32001 EXEC  PGM=ATA32001                                           
+//STEPLIB  DD  DSN=ADABAS.TELE.ADALOAD,DISP=SHR                         
+//         DD  DSN=DSNB.RUNLIB.LOAD,DISP=SHR                            
+//DDCARD   DD  DSN=ADABAS.TELE.INSTALL(RUNV),DISP=SHR                   
+//SYSTSPRT DD  SYSOUT=*                                                 
+//SYSPRINT DD  SYSOUT=*                                                 
+//SYSOUT   DD  SYSOUT=*                                                 
+//DDREDE   DD  SYSOUT=*                                                 
+//SEQENT01 DD  DSN=%%PF1.ATA32001.SORT1.F%%ODATE,DISP=SHR               
+//SEQSAI01 DD  DSN=%%PF1.ATA32001.SAI1.F%%ODATE,UNIT=%%WORK,            
+//             DISP=(,CATLG,DELETE),DCB=(LRECL=70,RECFM=FB),            
+//             SPACE=(TRK,(&TRK1,&TRK2),RLSE)                           
+//SEQSAI02 DD  DSN=%%PF1.ATA32001.SAI2.F%%ODATE,UNIT=%%WORK,            
+//             DISP=(,CATLG,DELETE),DCB=(LRECL=70,RECFM=FB),            
+//             SPACE=(TRK,(&TRK1,&TRK2),RLSE)                           
+//                                                                      
+**************************** Bottom of Data ****************************
+
+
+
+  ------------------------///////////----------------------------
+
+
+
+//* *-----------------------------------------------------------------* 
+//* * CHAMA O PROGRAMA SER1900A                                       * 
+//* *-----------------------------------------------------------------* 
+//SER1900A EXEC PGM=ATIADAB                                             
+//STEPLIB  DD DSN=ADABAS.TELE.ADALOAD,DISP=SHR                          
+//         DD DSN=CTB.LOADLIB,DISP=SHR                                  
+//         DD DSN=CTB.LINKLIB.LOE.BSL,DISP=SHR                          
+//         DD DSN=SYS4.TSTLIB,DISP=SHR                                  
+//DDCARD   DD DSN=ADABAS.TELE.INSTALL(RUNV),DISP=SHR                    
+//SEQENT01 DD DSN=D5.EVERIS.#BLITZ.ENT01,                               
+//            DISP=SHR                                                  
+//SEQSAI01 DD DSN=D5.EVERIS.#BLITZ.SAI01,                               
+//            DISP=(NEW,CATLG,DELETE),UNIT=TESTE,                       
+//            DCB=(LRECL=28,RECFM=FB),SPACE=(CYL,(30,10),RLSE)          
+//DDASSO   DD DUMMY                                                     
+//DDREDE   DD SYSOUT=*                                                  
+//MINTDUMP DD SYSOUT=U                                                  
+//SYSUDUMP DD SYSOUT=U                                                  
+//SYSDBOUT DD SYSOUT=*                                                  
+//SYSOUT   DD SYSOUT=*                                                  
+//*                                                                     
+**************************** Bottom of Data ****************************
+
+
+
+
+ -------------------------------//////////////////-----------------
+
+
+
+ORIGINAL MEU
+//**********************************************************************
+//* SER32L - CHAMADA PROGRAMA COBOL COM ADABAS D                        
+//********************************************************************* 
+//SER32L    EXEC PGM=SER32L                                             
+//STEPLIB  DD DSN=ADABAS.TELE.ADALOAD,DISP=SHR                          
+//*DDPRINT   DD DUMMY                                                   
+//SYSPRINT  DD SYSOUT=*                                                 
+//SYSOUT    DD SYSOUT=*                                                 
+//SYSTSPRT  DD SYSOUT=*                                                 
+//SYSUDUMP  DD SYSOUT=U                                                 
+//SEQENT01  DD DSN=D5.EVERIS.#LAYNER.SAI03,DISP=SHR                     
+//SEQSAI01  DD DSN=D5.EVERIS.#LAYNER.S04,                               
+//             DISP=(,CATLG,DELETE),                                    
+//             UNIT=TESTE,                                              
+//             SPACE=(TRK,(1000,100),RLSE),                             
+//             DCB=(BLKSIZE=0,LRECL=50,RECFM=FB)                        
+//                                                                      
+//*                                                                     
+//**********************************************************************
+
+
+
+
+------ENTRADAS----------
+ DD  DSN=ADABAS.TELE.ADALOAD,DISP=SHR        
+ DD  DSN=DSNB.RUNLIB.LOAD,DISP=SHR           
+ DD  DSN=ADABAS.TELE.INSTALL(RUNV),DISP=SHR  
+
+
